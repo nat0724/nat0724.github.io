@@ -404,106 +404,94 @@ h1 {
         
      
 
-@media (max-width: 1024px) {
-    header {
-        padding: 15px 3%;
-        position: relative; 
-    }
-    
-    nav ul {
-        gap: 30px;
-    }
-    
-    .container, .blog-container, .about-container {
-        padding-top: 20px; 
-    }
-}
-
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        padding: 15px 5%;
+        padding: 10px 3%;
+        flex-direction: row;
+        align-items: center;
+        height: 60px;
     }
     
     .logo {
-        margin-bottom: 15px;
+        font-size: 18px;
+        margin-bottom: 0;
+    }
+    
+    nav {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #84549C;
+        padding: 15px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+    }
+    
+    nav.active {
+        transform: translateY(0);
     }
     
     nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
         gap: 15px;
-    }
-    
-    .profile {
-        padding: 20px;
-    }
-    
-    .intro-text {
-        max-width: 100%;
-    }
-    
-    .section {
-        padding: 1.5rem;
-    }
-    
-    .footer {
-        position: relative; 
-        margin-top: 40px;
-    }
-}
-
-@media (max-width: 480px) {
-    nav ul {
-        gap: 10px;
+        padding: 0 20px;
     }
     
     nav ul li a {
-        font-size: 14px;
+        display: block;
+        padding: 8px 0;
     }
     
-    .profile-img {
-        width: 120px;
-        height: 120px;
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
     }
     
-    h1 {
-        font-size: 24px;
-    }
-    
-    .blog-title {
-        font-size: 1.8rem;
-    }
-    
-    .project-tile {
-        width: 250px;
-        height: 350px;
-    }
-    
-    .section {
-        padding: 1rem;
-        border-radius: 12px;
-    }
-    
-    .section h3 {
-        font-size: 1.5rem;
-    }
-}
-
-
-@media (max-height: 600px) {
-    header {
-        position: relative; 
-    }
-    
-    .footer {
+    .menu-icon {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: #F5DDDD;
         position: relative;
     }
+    
+    .menu-icon::before,
+    .menu-icon::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 3px;
+        background: #F5DDDD;
+        transition: all 0.3s;
+    }
+    
+    .menu-icon::before {
+        top: -8px;
+    }
+    
+    .menu-icon::after {
+        top: 8px;
+    }
+    
+    .menu-toggle.active .menu-icon {
+        background: transparent;
+    }
+    
+    .menu-toggle.active .menu-icon::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+    
+    .menu-toggle.active .menu-icon::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    
+    .container, .blog-container, .about-container, .projects-container {
+        padding-top: 60px;
+    }
 }
-    
-   
-
-  
-    
- 
-    
